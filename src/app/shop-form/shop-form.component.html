@@ -1,0 +1,77 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="newShopForm">
+  <div class="mb-4">
+    <label for="tercero" class="form-label">Tercero</label>
+    <input type="text" class="form-control" id="tercero" placeholder="Enter" name="tercero" required formControlName="tercero">
+    <div *ngIf="newShopForm.get('tercero')?.touched && newShopForm.get('tercero')?.errors?.['required']"
+         class="alert alert-danger">Este campo es requerido</div>
+    <div *ngIf="newShopForm.get('tercero')?.touched && newShopForm.get('tercero')?.errors?.['minlength']"
+         class="alert alert-danger">Debe tener al menos {{newShopForm.get('tercero')?.errors?.['minlength'].requiredLength}} caracteres</div>
+  </div>
+  <div class="mb-4">
+    <label for="sucursal" class="form-label">Sucursal</label>
+    <select name="sucursal" id="sucursal" class="form-select" formControlName="sucursal">
+      <option value="Popayan">Popayán</option>
+      <option value="Bogota">Bogotá</option>
+      <option value="Medellin">Medellín</option>
+      <option value="Cartagena">Cartagena</option>
+      <option value="Cali">Cali</option>
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <label for="nit" class="form-label">NIT</label>
+    <input type="text" class="form-control" id="nit" placeholder="Enter NIT" name="nit" required formControlName="nit">
+    <div *ngIf="newShopForm.get('nit')?.touched && newShopForm.get('nit')?.errors?.['required'] "
+      class="alert alert-danger">This field is required</div>
+    <div *ngIf="newShopForm.get('nit')?.touched && newShopForm.get('nit')?.errors?.['minlength'] "
+      class="alert alert-danger">Name must be at least {{newShopForm.get('nit')?.errors?.['minlength'].requiredLength}}
+      characters long</div>
+  </div>
+
+  <div class="mb-4">
+    <label for="tipo" class="form-label">Tipo</label>
+    <select name="tipo" id="tipo" class="form-select" formControlName="tipo">
+      <option value="Shop">Shop</option>
+      <option value="Restaurant">Restaurant</option>
+      <option value="Bar">Bar</option>
+      <option value="Cafe">Cafe</option>
+    </select>
+  </div>
+
+  <div class="mb-4">
+    <label for="estado" class="form-label">Estado</label>
+    <select name="estado" id="estado" class="form-select" formControlName="estado">
+      <option value="Pendiente">Pendiente</option>
+      <option value="En proceso">En proceso</option>
+      <option value="Finalizado">Finalizado</option>
+    </select>
+    <div *ngIf="newShopForm.get('estado')?.touched && newShopForm.get('estado')?.errors?.['required'] "
+      class="alert alert-danger">This field is required</div>
+  </div>
+
+  <div class="mb-4">
+    <label for="invioce" class="form-label">Invoice</label>
+    <textarea class="form-control" rows="5" id="invioce" placeholder="Enter Invoice" name="invioce" required
+      formControlName="invioce"></textarea>
+    <div *ngIf="newShopForm.get('invioce')?.touched && newShopForm.get('invioce')?.errors?.['required']"
+      class="alert alert-danger">This field is required</div>
+  </div>
+
+  <div class="mb-4">
+    <label for="total" class="form-label">Total</label>
+    <input type="text" class="form-control" id="total" placeholder="Enter Total" name="total" required
+      formControlName="total">
+    <div *ngIf="newShopForm.get('total')?.touched && newShopForm.get('total')?.errors?.['required'] "
+      class="alert alert-danger">This field is required</div>
+  </div>
+
+  <div class="mb-4">
+    <label for="date" class="form-label">Select Date</label>
+    <input type="date" class="form-control" id="date" name="date" placeholder="Select a date" required
+      formControlName="date">
+    <div *ngIf="newShopForm.get('date')?.touched && newShopForm.get('date')?.errors?.['required']"
+      class="alert alert-danger">
+      This field is required.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="newShopForm.invalid">Enviar</button></form>

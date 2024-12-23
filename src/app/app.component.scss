@@ -1,0 +1,41 @@
+
+.btn-rounded-left {
+  background-color: #673ab7; // Color morado
+  color: #fff; // Letra blanca
+  font-weight: bold;
+  border: none; // Sin borde
+  border-radius: 50px; // Redondeado completo
+  padding: 0.5rem 1rem; // Espaciado interno
+  text-align: left; // Alineado a la izquierda
+  display: block; // Asegura que ocupe el ancho disponible para alinearlo
+
+  &:hover {
+    background-color: #5e35b1; // Color morado más oscuro al pasar el mouse
+  }
+
+  &:focus {
+    outline: none; // Elimina el borde de enfoque
+    box-shadow: 0 0 0 0.2rem rgba(103, 58, 183, 0.5); // Efecto de foco
+  }
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f5f7;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 20px;
+}
+
+h3 {
+  color: #333333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}

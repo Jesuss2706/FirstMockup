@@ -1,0 +1,81 @@
+<div class="container">
+  <div id="Filtro" class="card">
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h3>COMPRAS</h3>
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn-rounded-left"><svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bis bi-funnel" viewBox="0 0 16 16">
+              <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2z"/>
+            </svg> Filtrar</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <form class="row row-cols-lg-auto g-5 align-items-center">
+              <div class="mb-4">
+                <label for="sucursal" class="form-label">SUCURSALES</label>
+                <select name="sucursal" id="sucursal" class="form-select">
+                  <option selected value="null">SELECCIONE</option>
+                  <option value="Popayan">Popayán</option>
+                  <option value="Bogota">Bogotá</option>
+                  <option value="Medellin">Medellín</option>
+                  <option value="Cartagena">Cartagena</option>
+                  <option value="Cali">Cali</option>
+                </select>
+              </div>
+
+              <div class="mb-4 col12">
+                <label for="inputState" class="form-label">TERCEROS</label>
+                <select id="inputState" id="tercero" class="form-select">
+                  <option selected>SELECCIONE</option>
+                  <option value="Qbano">Qbano</option>
+                  <option value="PioPio">PioPio</option>
+                  <option value="'212'">212</option>
+                  <option value="BBC">BBC</option>
+                </select>
+              </div>
+
+              <div class="mb-4 col-12">
+                <label for="date" class="form-label">SELECT DATE</label>
+                <input type="date" class="form-control" id="date" name="date" placeholder="Select a date" required
+                  formControlName="date">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="card">
+        <div class="card-header">
+          <app-create (onShopFormSubmit)="onShopFormSubmit($event)"></app-create>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <app-compras-list [purchases]="purchases"></app-compras-list>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var modalId = document.getElementById('modalId');
+
+  modalId.addEventListener('show.bs.modal', function (event) {
+    let button = event.relatedTarget;
+    let recipient = button.getAttribute('data-bs-whatever');
+    // Aquí puedes manejar lo que pasa cuando se muestra el modal
+    console.log('Modal abierto con data: ' + recipient);
+  });
+</script>
